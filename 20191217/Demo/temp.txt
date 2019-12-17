@@ -1,0 +1,3 @@
+使用BufferedReader读取字符
+注意：readLine会将读取到的换行去掉
+	结尾以null为标记

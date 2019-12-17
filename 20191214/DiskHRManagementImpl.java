@@ -18,6 +18,7 @@ public class DiskHRManagementImpl implements HRManagementIF
 		
 	}
 
+
 	//查询人员
 	public Human[] query(){
 		Human[] humans = new Human[2];
