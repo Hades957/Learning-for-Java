@@ -24,10 +24,46 @@ public class Homework1{
 					map.put(date,++i);
 				}else{
 					map.put(date,1);	
-				}
-					
+				}					
 			}
-			Set set = map.entrySet();
+			Comparator comp = new Comparator(){
+				public int compare(Object o1,Object o2){
+					String[] data1 = ((String)o1).split("-");
+					String[] data2 = ((String)o2).split("-");
+					int year1 = Integer.parseInt(data1[0]);
+					int year2 = Integer.parseInt(data2[0]);
+					int month1 = Integer.parseInt(data1[1]);
+					int month2 = Integer.parseInt(data2[1]);
+					int day1 = Integer.parseInt(data1[2]);
+					int day2 = Integer.parseInt(data2[2]);
+					if(year1 == year2 ){
+						if(month1 == month2){
+							if(day1 == day2){
+								return 1;
+							}else{
+								if(day1>day2){
+									return 1;
+								}else{
+									return -1;
+								}
+							}
+						}else{
+							if(month1>month2){
+								return 1;
+							}else{
+								return -1;
+							}
+						}
+					}else{
+						if(year1>year2){
+							return 1;
+						}else{
+							return -1;
+						}
+					}
+				}
+			};
+			Set set = map.keySet(comp);
 			Iterator it = set.iterator();
 			while(it.hasNext()){
 				Map.Entry obj = (Map.Entry)it.next();

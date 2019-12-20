@@ -19,5 +19,41 @@
 *.tar.gz
 *.rar
 
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ip
+
+### Eclipse ###
+/target/
+/.settings/
+.classpath
+.project
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+20191218/Servers/.project
+*.prefs
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/context.xml
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/jmxremote.access
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/jmxremote.password
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/server.xml
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/tomcat-users.xml
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/web.xml
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/catalina.properties
+20191218/Servers/Pivotal tc Server Developer Edition v4.0-config/catalina.policy
+
+
+
+*.db
+*.svn-base
