@@ -21,16 +21,45 @@ public class Test {
 					if(this.isInterrupted()) {
 						break;
 					}
-					Test.sleep(1);
+					//Test.sleep(1);
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						this.interrupt();
+					}
 				}
 			}
 		};
 		tt.start();
 		
-		System.out.println("main线程休息10秒。。。。。");
-		sleep(10);
 		
-		System.out.println("main线程休息好了，立即让之前那个新线程中断状态，中断。");
-		tt.interrupt();
+		//演示static boolean interrupted()
+		Thread tt2 = new Thread() {
+			public void run() {
+				for(int i=1;i<=20;i++) {
+					System.out.println(i+" 中断状态："+Thread.interrupted());
+										
+					Test.sleep(1);
+				}
+			}
+		};
+		tt2.start();
+		
+		System.out.println("main线程休息10秒。。。。。"); sleep(10);
+		  
+		System.out.println("main线程休息好了，立即让之前那个新线程中断状态，中断。"); tt.interrupt();
+		
+		
+		sleep(3);
+		tt2.interrupt();
+		
+		
+		//"同时"跑, cpu只有一个，那么假设只有一个内核情况下，那么在某个时间点（微观上看）只能执行一个线程，但线程切换，cpu自己选择哪个线程下一个执行
+		//那么马上要执行的线程获取了cpu的运行时间，一旦执行yield就会把这个运行的机会还回去。
+		
+		Thread.yield();
+		 
 	}
 }
