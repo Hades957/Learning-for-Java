@@ -49,7 +49,8 @@ public class TCPServer {
 					String reqMsg = br.readLine();
 					System.out.println("来自["+clientIP+":"+clientPort+"] 客户端消息："+reqMsg);
 					
-					if(reqMsg.equalsIgnoreCase("exit")) {
+					
+					if(reqMsg==null || reqMsg.equalsIgnoreCase("exit")) {
 						System.out.println("来自["+clientIP+":"+clientPort+"]的客户推出了。。。。");
 						break;
 					}

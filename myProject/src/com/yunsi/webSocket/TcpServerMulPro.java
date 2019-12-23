@@ -8,7 +8,7 @@ public class TcpServerMulPro extends Thread {
 
 	
 	public static void main(String[] args) {
-		 //创建socket，绑定到65000端口
+		 //创建socket，绑定到8888端口
         ServerSocket serverSocket;
         int port = 8888;
         System.out.println("服务器启动在本机的"+port+"端口上。。。。。");
